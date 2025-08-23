@@ -1,0 +1,73 @@
+<!-- Flash Messages (Bootstrap Alerts) -->
+
+<!-- Success Message -->
+<% if (success && success.length) { %>
+    <div class="alert alert-success alert-dismissible fade show col-8 offset-2 col-md-6 offset-md-3 mt-3" role="alert">
+        <!-- Display success text -->
+        <%= success %>
+        
+        <!-- Close button -->
+        <button type="button" class="btn-close" 
+                data-bs-dismiss="alert" 
+                aria-label="Close" 
+                style="justify-self: end;">
+        </button>
+    </div>
+<% } %>  
+
+<!-- Error Message -->
+<% if (error && error.length) { %>
+    <div class="alert alert-danger alert-dismissible fade show col-8 offset-2 col-md-6 offset-md-3 mt-3" role="alert">
+        <!-- Display error text -->
+        <%= error %>
+        
+        <!-- Close button -->
+        <button type="button" class="btn-close" 
+                data-bs-dismiss="alert" 
+                aria-label="Close" 
+                style="justify-self: end;"></button>
+    </div>
+<% } %>    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<% // if (success && success.length) { %>
+    <div class="alert alert-success alert-dismissible fade show col-8 offset-2 col-md-6 offset-md-3 mt-3" role="alert">
+        <%= // success %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="justify-self: end;"></button>
+    </div>
+<% // } %>  
+
+<% // if (error && error.length) { %>
+    <div class="alert alert-danger alert-dismissible fade show col-8 offset-2 col-md-6 offset-md-3 mt-3" role="alert">
+        <%= // error %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="justify-self: end;"></button>
+    </div>
+<% // } %>     -->

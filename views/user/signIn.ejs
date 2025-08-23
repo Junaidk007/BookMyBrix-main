@@ -1,0 +1,36 @@
+<%- layout("/layouts/boilerplate") %>
+
+<body>
+    <div class="signup-box">
+        <div class="sign-box">
+            <h1 class="sign-h1" style="text-align: center;">BookMyBrix<i class="fa-solid fa-location-arrow"></i></h1>
+            <form method="post" action="/signup" class="needs-validation signup-form" novalidate>
+                <div class="mb-2">
+                    <label for="username" class="form-lable" hidden></label>
+                    <input type="text" name="username" id="title" placeholder="username" class="form-control" required>
+                    <div class="invalid-feedback">invalid field entry</div>
+                </div>
+                <div class="mb-2">
+                    <label for="email" class="form-lable" hidden></label>
+                    <input type="email" name="email" id="email" placeholder="email" class="form-control" required>
+                    <div class="invalid-feedback">invalid field entry</div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-lable" hidden></label>
+                    <input type="password" name="password" id="password" placeholder="password" class="form-control"
+                        required>
+                    <div class="invalid-feedback">invalid field entry</div>
+                </div>
+                <div class="signup-btn">
+                    <button class="btn btn-danger">Sign Up</button>
+                </div>
+            </form>
+            <div class="or">
+                <div></div>
+                <span style="text-align: center;">OR</span>
+                <div></div>
+            </div>
+            <a href="/login" style="text-align: center; text-decoration: none; color: black;">Log In</a>
+        </div>
+    </div>
+</body>

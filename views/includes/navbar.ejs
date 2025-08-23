@@ -1,0 +1,98 @@
+<!-- Navbar (Bootstrap responsive navbar with search form) -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top border-bottom border-body" data-bs-theme="light">
+    <div class="container-fluid nav-box">
+
+        <!-- Brand Logo / Home Link -->
+        <a href="/listing" class="navbar-brand">
+            <span>BookMyBrix</span>
+            <i class="fa-solid fa-location-arrow log"></i>
+        </a>
+
+        <!-- Toggler button (for mobile view) -->
+        <button type="button" class="navbar-toggler tog-btn" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#menu"
+                aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Collapsible menu items -->
+        <div class="navbar-collapse collapse" id="menu">
+
+            <!-- Navigation Links -->
+            <div class="navbar-nav">
+                <a href="/listing" class="nav-link">Explorer</a>
+                <a href="/listing/new" class="nav-link">Airbnb your home</a>
+
+                <!-- Dynamic login/register/profile/logout link (set in controller) -->
+                <a href=<%= link %> class="nav-link"><%= linkname %></a>
+            </div>
+
+            <!-- Search Form (GET request to /listing/search) -->
+            <form class="form" role="search" method="get" action="/listing/search">
+                <div class="search form-control">
+                    <!-- Search input (query sent as 'q') -->
+                    <input class="search-inp" 
+                           type="search" 
+                           placeholder="Search by price/place" 
+                           aria-label="Search" 
+                           name="q"/>
+                    
+                    <!-- Search button -->
+                    <button class="btn btn-danger circle" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top  border-bottom border-body" data-bs-theme="light">
+    <div class="container-fluid nav-box">
+        <a href="/listing" class="navbar-brand">
+            <span>BookMyBrix</span>
+            <i class="fa-solid fa-location-arrow log"></i>
+        </a>
+        <button type="button" class="navbar-toggler tog-btn" data-bs-toggle="collapse" data-bs-target="#menu"
+            aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="navbar-collapse collapse " id="menu">
+            <div class="navbar-nav">
+                <a href="/listing" class="nav-link">Explorer</a>
+                <a href="/listing/new" class="nav-link">Airbnb your home</a>
+                <a href=<%= // link %> class="nav-link"><%= // linkname %></a>
+            </div>
+            <form class=" form" role="search" method="get" action="/listing/search">
+                <div class="search form-control">
+                    <input class=" search-inp" type="search" placeholder="Search by price/place" aria-label="Search" name="q"/>
+                    <button class="btn btn-danger circle" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav> -->

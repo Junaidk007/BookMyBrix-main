@@ -1,0 +1,67 @@
+<%- layout("/layouts/boilerplate") %>
+
+
+<body>
+    <div class="container-fluid">
+        <h3 class="offset-md-2 mt-3 mb-3">Edit Listing</h3>
+        <div class="col-md-8 offset-md-2 new-form">
+            <form method="post" action="/listing/<%=list._id%>?_method=PUT" class="needs-validation" novalidate
+                enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="title" class="form-lable">Title</label>
+                    <input type="text" name="listing[title]" id="title" value="<%=list.title%>" class="form-control"
+                        required>
+                    <div class="valid-feedback">Looks Good!</div>
+                    <div class="invalid-feedback">invalid field entry</div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-lable">Description</label>
+                    <textarea name="listing[description]" id="description" rows="5" class="form-control"
+                        required><%=list.description%></textarea>
+                    <div class="valid-feedback">Looks Good!</div>
+                    <div class="invalid-feedback">invalid field entry</div>
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        <label for="price" class="form-lable">Price</label>
+                        <input type="number" name="listing[price]" id="price" value="<%=list.price%>"
+                            class="form-control" required>
+                        <div class="valid-feedback">Looks Good!</div>
+                        <div class="invalid-feedback">invalid field entry</div>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="country" class="form-lable">Country</label>
+                        <input type="text" name="listing[country]" id="country" value="<%=list.country%>"
+                            class="form-control" required>
+                        <div class="valid-feedback">Looks Good!</div>
+                        <div class="invalid-feedback">invalid field entry</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-lable">Location</label>
+                    <input type="text" name="listing[location]" id="location" value="<%=list.location%>"
+                        class="form-control" required>
+                    <div class="valid-feedback">Looks Good!</div>
+                    <div class="invalid-feedback">invalid field entry</div>
+                </div>
+                <div class="mb-3">
+                    <p>Image in used</p>
+                    <img src="<%= orgImageUrl %>" alt="list.image.filename" style="    max-width: 250px;
+    max-height: 250px;">
+                </div>
+                <div class="mb-2">
+                    <label for="Image" class="form-lable">Image - URL</label>
+                    <input type="file" name="listing[image]" id="Image" value="<%=list.image.url%>"
+                        class="form-control">
+                    <div class="valid-feedback">Looks Good!</div>
+                    <div class="invalid-feedback">invalid field entry, pleas entry image url</div>
+                </div>
+                <div class="submit mb-3">
+                    <button class="btn btn-danger mt-4">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+<body>
