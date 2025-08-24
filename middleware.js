@@ -81,7 +81,12 @@ const isOwner = async (req, res, next) => {
   }
 
   // Check if the current user is the owner
-  if (!res.locals.currUser || !listing.owner.equals(res.locals.currUser._id)) {
+  if (!res.locals.currUser && !listing.owner._id.equals(res.locals.currUser._id)) {
+
+    if(!res.locals.currUser) {
+      req.flash("error", "Please login first!");
+    }
+
     req.flash("error", "You don't have permission to do that!");
     return res.redirect(`/listing/${id}`);
   }
