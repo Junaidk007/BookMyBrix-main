@@ -569,7 +569,7 @@ input:-webkit-autofill:active {
     .user-icon {
         height: 2rem !important;
         width: 2rem !important;
-        background-size: 2rem !important;
+        background-size: 3rem !important;
     }
 
     .show-title {
