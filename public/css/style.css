@@ -74,13 +74,15 @@ body::-webkit-scrollbar {
 
 .card {
     border: none !important;
-    width: 21.39vw;
+    width: 15.39vw;
     height: auto;
 }
 
 .card-img-top {
     border-radius: 1rem;
-    height: 12rem;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-height: 210px;
     transition: 1ms linear;
 }
 
@@ -94,15 +96,15 @@ body::-webkit-scrollbar {
 
 .view {
     text-decoration: none;
-    margin-bottom: 2rem;
-    height: 17rem;
+    /* margin-bottom: 2rem; */
+    /* height: 17rem; */
     width: fit-content;
     max-width: 344px;
     min-width: 100px;
 }
 
 .card-container {
-    gap: 0.5rem;
+    gap: 3rem 0;
     justify-content: space-evenly;
 }
 
@@ -150,9 +152,13 @@ body::-webkit-scrollbar {
 }
 
 .show-img img {
-    max-height: 427px;
-    padding: 0;
-    border-radius: 10px;
+    border-radius: 1rem;
+    /* max-width: 30rem; */
+    max-height: 30rem;
+    /* width: 100%; */
+    aspect-ratio: 1 / 1;
+    /* max-height: 210px; */
+    transition: 1ms linear;
 }
 
 .btns {
@@ -519,12 +525,12 @@ input:-webkit-autofill:active {
 
     .view {
         padding: 6px;
-        max-height: 184px;
+        max-height: max-content;
         height: auto;
     }
 
     .card-container {
-        gap: 2rem 0;
+        gap: 1rem 0;
         justify-content: space-around;
     }
 
@@ -558,7 +564,10 @@ input:-webkit-autofill:active {
     }
 
     .card-img-top {
-        height: 20vh;
+        max-height: 25vh;
+        height: auto;
+        width: 100%;
+        aspect-ratio: 1 / 1;
     }
 
     .user {
@@ -584,8 +593,8 @@ input:-webkit-autofill:active {
     }
 
     .show-img img {
-        width: 99%;
-        height: auto;
+        width: 100%;
+        /* height: auto; */
     }
 
     .show-des {
@@ -656,7 +665,7 @@ input:-webkit-autofill:active {
     }
 
     .card {
-        width: 35vw;
+        width: 25vw;
     }
 
     .review-box {
@@ -701,9 +710,9 @@ input:-webkit-autofill:active {
 }
 
 @media (min-width: 600px) and (max-width: 762px) {
-    .show-img img {
+    /* .show-img img {
         height: 50dvh;
-    }
+    } */
 
     #listing {
         padding: 0 3rem;
