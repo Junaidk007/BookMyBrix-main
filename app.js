@@ -94,20 +94,21 @@ async function userAuth(accessToken, refreshToken, profile, done) {
     // 4) If still no user, create one
     if (!user) {
       const baseUsername =
-        (email && email.split("@")[0]) ||
-        (displayName && displayName.replace(/\s+/g, "")) ||
-        "user";
+      (email && email.split("@")[0]) ||
+      (displayName && displayName.replace(/\s+/g, "")) ||
+    "user";
 
-      const username = await makeUniqueUsername(baseUsername);
+  // no uniqueness check
+  const username = baseUsername;
 
-      user = new User({
-        username,
-        email, // may be undefined if user hides email
-        googleId,
-        profilePic: photo,
-      });
-      await user.save();
-    }
+  user = new User({
+    username,
+    email, // may be undefined if user hides email
+    googleId,
+    profilePic: photo,
+  });
+  await user.save();
+}
 
     return done(null, user);
   } catch (err) {
