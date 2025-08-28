@@ -311,7 +311,7 @@ body::-webkit-scrollbar {
 .sign-box {
     width: 25rem;
     min-width: 227px;
-    height: 30rem;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -325,6 +325,22 @@ body::-webkit-scrollbar {
 .signup-btn button {
     width: 100%;
     border-radius: 2rem;
+}
+
+.google-auth {
+     width: 40px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 7px 0 #b4b4b4b3;
+    cursor: pointer;
+}
+
+.google-auth:hover {
+    box-shadow: inset 0px 0px 5px 0 #b4b1b182;
 }
 
 .sign-h1 {
@@ -375,7 +391,7 @@ body::-webkit-scrollbar {
 .search {
     background-color: white;
     display: flex;
-    border-radius: 2rem;
+    border-radius: 2.425rem;
     height: 3.5rem;
     justify-content: space-between;
     align-items: center;
@@ -544,8 +560,9 @@ input:-webkit-autofill:active {
     }
 
     .log {
-        top: 0.25rem;
-        left: 7rem;
+        top: 0.6rem;
+        left: 6.85rem;
+        font-size: 1.5rem;
     }
 
     .top-bar {

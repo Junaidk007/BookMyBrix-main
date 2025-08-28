@@ -6,9 +6,17 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
   email: {
     type: String,
-    required: true,
-    unique: true, // no duplicate emails allowed
-    lowercase: true, // always save in lowercase
+    lowercase: true,
+    unique: false, // ✅ not forcing unique, to support Google + Local separately
+  },
+  googleId: {
+    type: String, // ✅ store Google’s unique ID
+    unique: true, // each Google account is unique
+    sparse: true, // allow null for local users
+  },
+  profilePic: {
+    type: String, // optional, Google profile photo URL
+    default: "/images/fallback_img.jpeg"
   },
 });
 
@@ -19,43 +27,3 @@ userSchema.plugin(passportLocalMongoose);
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const { required } = require("joi");
-// const mongoose = require("mongoose");
-// const schema = mongoose.Schema;
-// const passportLocalMongoose = require('passport-local-mongoose');
-
-// const userSchema = new schema({
-//     email: {
-//         type: String,
-//         required: true
-//     }
-// })
-
-// userSchema.plugin(passportLocalMongoose);
-
-// module.exports = mongoose.model("User", userSchema);
-

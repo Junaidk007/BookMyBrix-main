@@ -81,6 +81,7 @@ module.exports.individualListing = async (req, res) => {
     return res.redirect("/listing");
   }
 
+  // console.log(list.owner)
   res.render("listing/show", { list, token: process.env.MAP_TOKEN, title: `bookMyBrix | ${list.title}` });
 };
 

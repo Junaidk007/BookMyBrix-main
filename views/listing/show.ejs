@@ -11,16 +11,23 @@
     background-color: #8080807d;
     height: 3rem;
     display: inline-block;
-    background-image: url("/css/user.jpg");
+    /* background-image: url("/css/user.jpg"); */
     background-size: 4rem;
     background-position: center;
     border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .user-icon img {
+      width: 100%;
+      font-size: 0.5rem;
+      aspect-ratio: 1 / 1;
   }
 
   .user {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
     background-size: cover;
     padding: 0 !important;
   }
@@ -34,8 +41,10 @@
 <body>
   <div class="container-fluid show-listing pt-3 pb-3">
     <div class="user  col-md-11 mb-3">
-        <span class="user-icon"></span>
-        <p style="font-weight: 500; margin: 0;">Hosted By &nbsp;<%= list.owner.username %>
+        <span class="user-icon">
+          <img src="<%= list.owner.profilePic %>" alt="">
+        </span>
+        <p style="font-weight: 500; margin: 0;">Hosted By&nbsp;<%= list.owner.username %>
         </p>
       </div>
     <div class=" offset-md-1" id="listing">
@@ -91,7 +100,9 @@
                 </form>
                 <% } %>
                   <div class="card-title review-user">
-                    <span class="user-icon"></span>
+                    <span class="user-icon">
+                      <img src="<%= review.author.profilePic %>" alt="<%= review.author.username %>">
+                    </span>
                     <p style="margin: 0;">
                       <%=review.author.username%>
                         <p>

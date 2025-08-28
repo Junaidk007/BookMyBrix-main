@@ -15,6 +15,21 @@ router
   // Handle signup form submission (creating a new user in DB)
   .post(wrapAsync(userController.userSignup));
 
+router.get("/auth/google",
+  passport.authenticate("google", { scope: ["profile", "email"] })
+);
+
+router.get("/auth/google/callback",
+  passport.authenticate("google", {
+    failureRedirect: "/signup", // if google auth fails
+    failureFlash: true
+  }),
+  (req, res) => {
+    // If successful, redirect to home (or listings)
+    res.redirect("/listing");
+  }
+);
+
 // ===============================
 // USER LOGIN ROUTES
 // ===============================
