@@ -253,7 +253,7 @@ flowchart LR
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/bookMyBrix.git
+   git clone https://github.com/Junaidk007/BookMyBrix-main
    cd bookMyBrix
    ```
 
